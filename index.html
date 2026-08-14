@@ -10,54 +10,102 @@
     <div class="container">
         <header>
             <h1>Cabinet Table Manager</h1>
-            <p>Manage VPX paths, scan tables, and configure your cabinet</p>
+            <p>Configure VPX paths, scan tables, match media, and manage your cabinet</p>
         </header>
 
         <main>
-            <!-- File Access Section -->
+            <!-- Step 1: File Access -->
             <section class="card">
-                <h2>1. Grant File Access</h2>
+                <h2>Step 1: Grant File Access</h2>
                 <p>Click below to select your cabinet data folder (where config.json and tables.json are stored):</p>
                 <button id="openFolderBtn" class="btn btn-primary">Open Cabinet Data Folder</button>
                 <p id="folderStatus" class="status"></p>
             </section>
 
-            <!-- VPX Paths Section -->
+            <!-- Step 2: Configure Paths -->
             <section class="card">
-                <h2>2. VPX Paths</h2>
+                <h2>Step 2: Configure Paths</h2>
                 <div class="form-group">
-                    <label for="vexPath">VEX Executable Path:</label>
-                    <input type="text" id="vexPath" placeholder="C:\Program Files\Visual Pinball Engine\VPinballX.exe">
+                    <label for="vpxExePath">VPX Executable Path:</label>
+                    <input type="text" id="vpxExePath" placeholder="C:\Program Files\Visual Pinball\VPinballX.exe">
                 </div>
                 <div class="form-group">
                     <label for="tablesPath">Tables Folder Path:</label>
                     <input type="text" id="tablesPath" placeholder="C:\Users\YourName\Documents\VPinball\Tables">
                 </div>
+                <div class="form-group">
+                    <label for="mediaPath">Media Folder Path:</label>
+                    <input type="text" id="mediaPath" placeholder="C:\Users\YourName\Documents\VPinball\Media">
+                </div>
                 <button id="savePathsBtn" class="btn btn-secondary">Save Paths</button>
                 <p id="pathStatus" class="status"></p>
             </section>
 
-            <!-- Table Scanning Section -->
+            <!-- Step 3: Configure Settings -->
             <section class="card">
-                <h2>3. Scan Tables</h2>
-                <p>Scan your tables folder to find all .vpx files:</p>
-                <button id="scanBtn" class="btn btn-secondary">Scan Tables Folder</button>
+                <h2>Step 3: Configure Settings</h2>
+                <div class="settings-grid">
+                    <div class="form-group">
+                        <label for="rotation">Rotation Angle (degrees):</label>
+                        <select id="rotation">
+                            <option value="0">0°</option>
+                            <option value="90">90°</option>
+                            <option value="270">270°</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fontSize">List Font Size (px):</label>
+                        <input type="number" id="fontSize" min="12" max="72" value="24">
+                    </div>
+                    <div class="form-group">
+                        <label for="windowWidth">Window Width (px):</label>
+                        <input type="number" id="windowWidth" min="800" max="3840" value="3840">
+                    </div>
+                    <div class="form-group">
+                        <label for="windowHeight">Window Height (px):</label>
+                        <input type="number" id="windowHeight" min="600" max="2160" value="2160">
+                    </div>
+                </div>
+                <button id="saveSettingsBtn" class="btn btn-secondary">Save Settings</button>
+                <p id="settingsStatus" class="status"></p>
+            </section>
+
+            <!-- Step 4: Scan Folders -->
+            <section class="card">
+                <h2>Step 4: Scan Folders</h2>
+                <p>Scan your Tables and Media folders to find files and auto-match media to tables:</p>
+                <button id="scanBtn" class="btn btn-secondary">Scan Folders</button>
                 <p id="scanStatus" class="status"></p>
             </section>
 
-            <!-- Tables List Section -->
+            <!-- Step 5: Manage Tables -->
             <section class="card">
-                <h2>4. Manage Tables</h2>
-                <div id="tablesList" class="tables-container">
-                    <p class="placeholder">No tables scanned yet. Click "Scan Tables Folder" above.</p>
+                <h2>Step 5: Manage Tables</h2>
+                <div class="tables-grid-wrapper">
+                    <table class="tables-grid" id="tablesGrid">
+                        <thead>
+                            <tr>
+                                <th>Visible</th>
+                                <th>Filename</th>
+                                <th>Display Name</th>
+                                <th>Media File</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablesList">
+                            <tr>
+                                <td colspan="5" class="placeholder">No tables scanned yet. Complete Steps 2-4 above.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <button id="saveTablesBtn" class="btn btn-primary" style="margin-top: 1rem;">Save Table Settings</button>
+                <button id="saveTablesBtn" class="btn btn-primary" style="margin-top: 1rem;">Save All Changes</button>
                 <p id="tablesStatus" class="status"></p>
             </section>
         </main>
 
         <footer>
-            <p>Table Manager v1.0 | Cabinet Configuration Tool</p>
+            <p>Table Manager v2.0 | Cabinet Configuration Tool</p>
         </footer>
     </div>
 
