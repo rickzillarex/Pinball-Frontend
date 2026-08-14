@@ -41,7 +41,7 @@ def create_bundle():
         bundle_dir
     )
     
-    print(f'✓ Bundle created: {zip_path}')
+    print(f'Bundle created: {zip_path}')
 
 if __name__ == '__main__':
     create_bundle()
