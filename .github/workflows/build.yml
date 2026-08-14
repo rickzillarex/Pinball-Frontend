@@ -26,7 +26,6 @@ jobs:
     - name: Build exe files
       run: |
         pyinstaller --onefile pinball_frontend.py
-        pyinstaller --onefile table_manager.py
     - name: Create distributable bundle
       run: python package_bundle.py
     - name: Upload bundle artifact
