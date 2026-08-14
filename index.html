@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cabinet Table Manager</h1>
+            <p>Manage VPX paths, scan tables, and configure your cabinet</p>
+        </header>
+
+        <main>
+            <!-- File Access Section -->
+            <section class="card">
+                <h2>1. Grant File Access</h2>
+                <p>Click below to select your cabinet data folder (where config.json and tables.json are stored):</p>
+                <button id="openFolderBtn" class="btn btn-primary">Open Cabinet Data Folder</button>
+                <p id="folderStatus" class="status"></p>
+            </section>
+
+            <!-- VPX Paths Section -->
+            <section class="card">
+                <h2>2. VPX Paths</h2>
+                <div class="form-group">
+                    <label for="vexPath">VEX Executable Path:</label>
+                    <input type="text" id="vexPath" placeholder="C:\Program Files\Visual Pinball Engine\VPinballX.exe">
+                </div>
+                <div class="form-group">
+                    <label for="tablesPath">Tables Folder Path:</label>
+                    <input type="text" id="tablesPath" placeholder="C:\Users\YourName\Documents\VPinball\Tables">
+                </div>
+                <button id="savePathsBtn" class="btn btn-secondary">Save Paths</button>
+                <p id="pathStatus" class="status"></p>
+            </section>
+
+            <!-- Table Scanning Section -->
+            <section class="card">
+                <h2>3. Scan Tables</h2>
+                <p>Scan your tables folder to find all .vpx files:</p>
+                <button id="scanBtn" class="btn btn-secondary">Scan Tables Folder</button>
+                <p id="scanStatus" class="status"></p>
+            </section>
+
+            <!-- Tables List Section -->
+            <section class="card">
+                <h2>4. Manage Tables</h2>
+                <div id="tablesList" class="tables-container">
+                    <p class="placeholder">No tables scanned yet. Click "Scan Tables Folder" above.</p>
+                </div>
+                <button id="saveTablesBtn" class="btn btn-primary" style="margin-top: 1rem;">Save Table Settings</button>
+                <p id="tablesStatus" class="status"></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Table Manager v1.0 | Cabinet Configuration Tool</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
