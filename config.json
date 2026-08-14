@@ -1,0 +1,12 @@
+{
+  "vpx_exe_path": "C:\\vPinball\\Visual Pinball\\VPinballX.exe",
+  "table_folder_path": "C:\\vPinball\\Visual Pinball\\Tables",
+  "media_folder_path": "C:\\vPinball\\Visual Pinball\\Media",
+  "rotation_angle": 270,
+  "font_size": 42,
+  "window_width": 3840,
+  "window_height": 2160,
+  "vpx_launch_arg": "-Play",
+  "exit_grace_ms": 500,
+  "fullscreen": true
+}
